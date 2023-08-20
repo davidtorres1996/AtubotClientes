@@ -8,109 +8,95 @@ import MockAdapter from "@bot-whatsapp/database/mock";
 import chatgpt from "./services/openai/chatgpt.js";
 import GoogleSheetService from "./services/sheets/index.js";
 
-const googelSheet = new GoogleSheetService(
-  "1rDDWdRcLmecRhDSepMZdJwxMIp8iOxZMjDKuh2dA6W8"
+const googleSheet = new GoogleSheetService(
+  "1sijF27ZmQtxf5UeY0XamfLhkCBYZ8Szz4G9QrRtwNss"
 );
 
 const GLOBAL_STATE = [];
-
-const flowPrincipal = bot
-  .addKeyword(["hola", "hi"])
-  .addAnswer([
-    `Bienvenidos a mi restaurante de cocina economica automatizado! 🚀`,
-    `Tenemos menus diarios variados`,
-    `Te gustaria conocerlos ¿?`,
-    `Escribe *menu*`,
-  ]);
-
+const clave1 = `/(?:^|\s)actualizar v2(?=\s|$)/gi`
+const clave2 = `/(?:^|\s)demo v2(?=\s|$)/gi`
 const flowMenu = bot
-  .addKeyword("menu")
-  .addAnswer(
-    `Hoy tenemos el siguiente menu:`,
-    null,
-    async (_, { flowDynamic }) => {
-      const dayNumber = getDay(new Date());
-      const getMenu = await googelSheet.retriveDayMenu(dayNumber);
-      for (const menu of getMenu) {
-        GLOBAL_STATE.push(menu);
-        await flowDynamic(menu);
-      }
+  .addKeyword(clave1, {regex: true})
+  .addAction(async (ctx, { flowDynamic, provider }) => {
+    const phoneNumber = ctx.from;
+    const id = ctx.key.remoteJid
+
+    const reactionMessage = {
+        react: {
+            text: "🔍", 
+            key: ctx.key
+        }
     }
-  )
-  .addAnswer(
-    `Te interesa alguno?`,
-    { capture: true },
-    async (ctx, { gotoFlow, state }) => {
-      const txt = ctx.body;
-      const check = await chatgpt.completion(`
-    Hoy el menu de comida es el siguiente:
-    "
-    ${GLOBAL_STATE.join("\n")}
-    "
-    El cliente quiere "${txt}"
-    Basado en el menu y lo que quiere el cliente determinar (EXISTE, NO_EXISTE).
-    La orden del cliente
-    `);
+    const abc = await provider.getInstance()  
+    await abc.sendMessage(id, reactionMessage)
 
-      const getCheck = check.data.choices[0].text
-        .trim()
-        .replace("\n", "")
-        .replace(".", "")
-        .replace(" ", "");
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
-      if (getCheck.includes("NO_EXISTE")) {
-        return gotoFlow(flowEmpty);
-      } else {
-        state.update({pedido:ctx.body})
-        return gotoFlow(flowPedido);
-      }
+    const foundRowData = await googleSheet.searchAndReturnRowByPhoneNumber(phoneNumber);
+
+    if (foundRowData !== null) {
+      const reactionMessage = {
+        react: {
+            text: "✅", 
+            key: ctx.key
+        }
     }
-  );
+    const abc = await provider.getInstance()  
+    await abc.sendMessage(id, reactionMessage)
 
-const flowEmpty = bot
-  .addKeyword(bot.EVENTS.ACTION)
-  .addAnswer("No te he entendido!", null, async (_, { gotoFlow }) => {
-    return gotoFlow(flowMenu);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      flowDynamic(`¡Hola *${ctx.pushName}!* Con gusto, aquí tienes la versión más reciente del proyecto:`)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      flowDynamic(`https://taskernet.com/shares/?user=AS35m8kO2Sf3H%2FI3H3GKoKtye5Q%2B6fB3%2BLIGVsjFCPmpGvIq9P56Qntx2mIgD1PbSOfhqpIBgixxvA%3D%3D&id=Project%3AATUBOT+V2.5`)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      flowDynamic(`Para importar a Tasker, simplemente sigue este enlace 🔗 y haz clic en el botón de importar. Una vez allí, permites reemplazar todo y ¡listo! 😄`)
+    } else {
+      const reactionMessage = {
+        react: {
+            text: "❌", 
+            key: ctx.key
+        }
+    }
+    const abc = await provider.getInstance()  
+    await abc.sendMessage(id, reactionMessage)
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    flowDynamic(`⛔ Ups *${ctx.pushName}* No hemos encontrado tu ID de compra en nuestra base de datos. Si crees que se trata de un error, escríbenos y 🙎‍♂️ David te ayudará a solucionarlo`)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    flowDynamic(`🛒 Si deseas adquirir nuestro plugin por primera vez, 💸 puedes hacerlo en el siguiente enlace:`)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    flowDynamic(`https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7URTTUAX9K62G`)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    flowDynamic(`💰 Una vez realizado el pago 💳, por favor envíanos una captura 📸 del mismo junto con tu correo electrónico 📧 para poder enviarte el archivo fuente correspondiente. Si deseas una version Demo puedes enviarme la palabra:\n *Demo V2* 🎉`)
+    }
   });
 
-const flowPedido = bot
-  .addKeyword(["pedir"], { sensitive: true })
-  .addAnswer(
-    "¿Cual es tu nombre?",
-    { capture: true },
-    async (ctx, { state }) => {
-      state.update({ name: ctx.body });
+  const flowDemo = bot
+  .addKeyword(clave2, {regex: true})
+  .addAction(async (ctx, { flowDynamic, provider }) => {
+    const id = ctx.key.remoteJid
+
+    const reactionMessage = {
+        react: {
+            text: "🤖", 
+            key: ctx.key
+        }
     }
-  )
-  .addAnswer(
-    "¿Alguna observacion?",
-    { capture: true },
-    async (ctx, { state }) => {
-      state.update({ observaciones: ctx.body });
-    }
-  )
-  .addAnswer(
-    "Perfecto tu pedido estara listo en un aprox 20min",
-    null,
-    async (ctx, { state }) => {
-        const currentState = state.getMyState();
-      await googelSheet.saveOrder({
-        fecha: new Date().toDateString(),
-        telefono: ctx.from,
-        pedido: currentState.pedido,
-        nombre: currentState.name,
-        observaciones: currentState.observaciones,
-      });
-    }
-  );
+    const abc = await provider.getInstance()  
+    await abc.sendMessage(id, reactionMessage)
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+      flowDynamic(`¡Hola *${ctx.pushName}!* La demo estara disponible en unos dias para ser exactos: *25/08/2023*`)
+  
+    });
+
 
 const main = async () => {
   const adapterDB = new MockAdapter();
   const adapterFlow = bot.createFlow([
-    flowPrincipal,
     flowMenu,
-    flowPedido,
-    flowEmpty,
+    flowDemo
   ]);
   const adapterProvider = bot.createProvider(BaileysProvider);
 
