@@ -86,8 +86,11 @@ const flowMenu = bot
     await abc.sendMessage(id, reactionMessage)
 
     await new Promise(resolve => setTimeout(resolve, 2000));
-
-      flowDynamic(`¡Hola *${ctx.pushName}!* La demo estara disponible en unos dias para ser exactos: *25/08/2023*`)
+      flowDynamic(`¡Hola *${ctx.pushName}!* ¡La espera ha llegado a su fin! Estamos emocionados de compartir contigo nuestro proyecto tan esperado. Ahora puedes acceder a todos los detalles que has estado ansiando. 🎉`)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+      flowDynamic(`Aquí tienes el enlace al proyecto:\nhttps://taskernet.com/shares/?user=AS35m8kO2Sf3H%2FI3H3GKoKtye5Q%2B6fB3%2BLIGVsjFCPmpGvIq9P56Qntx2mIgD1PbSOfhqpIBgixxvA%3D%3D&id=Project%3APlugin+Demo+V2.6`)
+    await new Promise(resolve => setTimeout(resolve, 2000));
+      flowDynamic(`Si estás listo para comenzar y deseas importar las instrucciones, dirígete a las siguientes indicaciones en este enlace: Instrucciones de Importación\nhttps://www.atubot.net.pe/p/demo.html`)
   
     });
 
