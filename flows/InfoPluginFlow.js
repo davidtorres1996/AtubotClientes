@@ -12,7 +12,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
         await flowDynamic([
             {
             body: `❓ *Preguntas Frecuentes:*\n\n├1️⃣ _¿Cuál es el precio?_\n├2️⃣ _¿Es Pago único?_\n├3️⃣ _¿Qué puede hacer el plugin?_\n├4️⃣ _¿En múltiples dispositivos?_\n├5️⃣ _¿Es difícil de instalar?_\n├6️⃣ _¿Qué es este plugin?_\n├7️⃣ _¿Recibiré actualizaciones?_\n├8️⃣ ¿En cualquier teléfono?\n├9️⃣ _¿Es recomendable para mí?_\n└0️⃣ _Ir atrás ↲_`,
-            media: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimPyBXB2IUYi7kLFqOXiYXQ4sq9SmEbXNtUOoFTjir640pJsZvV55IbLUKUl-NeBbT_Krab2Nqh17SAIBMmOM12MkVemLrsVNlDzNRTfv5nnVmm41ajcx3GcO60NrdUrjwpSsodeOdI591pu1T279yD97woWC45nCzaza54P-jaCz6Hmd8-s-0H5yPlPQ6/s1920/preguntas-frecuentes.jpg"
+            media: "https://drive.google.com/uc?id=1ofQngAxsbJVReAzMB-avi7nI338VHByG"
             }
         ]
         )
@@ -112,7 +112,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await flowDynamic([
                 {
                 body: `*${ctx.pushName}* 😊👋\nTengo estas opciones para ti:\n\n├1️⃣ _*Info Plugin V2*_\n├2️⃣ _*Comprar Plugin V2*_\n├3️⃣ _*Demo Plugin V2*_\n├4️⃣ _*Servicios*_\n├5️⃣ _*Tutoriales*_\n└6️⃣ _*Tienda de Proyectos*_`,
-                media: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht8i6RYajBNeyxIqDJXHAsUYaCgf1GtI_JCuhHvuhJpAHCDGmobVKns_e8brGmnfI_RQwVw7atDgVd1mEkU9--J3Rs2lGFLQz2ZQf2_omf25RTll4pBFI4kicxAETHZ8Vj1uMZe5qvRrTWmZlt0RAPE-4xgS6bwEDap5GbQ5Qeo9pBIyp7KxlOgsldA5hS/s1920/menu-principal.jpg"
+                media: "https://drive.google.com/uc?id=1pAFpsqEq-HXLYux7B23RMUIdaUx7QDOC"
                 }
             ])
             gotoFlow(MenuFlow)
