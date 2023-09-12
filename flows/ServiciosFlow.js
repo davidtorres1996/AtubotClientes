@@ -11,7 +11,7 @@ export const ServiciosFlow = bot .addKeyword(bot.EVENTS.ACTION)
     await typing(provider, ctx, 2000);
         await flowDynamic([
             {
-            body: `🛠️ *Servicos Disponibles:*\n\n├1️⃣ _ChatBot Mobile_\n├2️⃣ _ChatBot Server_\n└0️⃣ _Ir atrás ↲_`,
+            body: `🛠️ *Servicios Disponibles:*\n\n├1️⃣ _ChatBot Mobile_\n├2️⃣ _ChatBot Server_\n└0️⃣ _Ir atrás ↲_`,
             media: "https://drive.google.com/uc?id=1aWjVhnlZsX5hgSWeZpBkhMyiHf-0ixVo"
             }
         ]

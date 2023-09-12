@@ -3,7 +3,7 @@ import bot from "@bot-whatsapp/bot";
 import { getDay } from "date-fns";
 import QRPortalWeb from "@bot-whatsapp/portal";
 import BaileysProvider from "@bot-whatsapp/provider/baileys";
-import MockAdapter from "@bot-whatsapp/database/mock";
+import MockAdapter from "@bot-whatsapp/database/json";
 import linkPreview from 'link-preview-js';
 
 import { ActualizarFlow } from "./flows/ActualizarFlow.js";
@@ -14,6 +14,7 @@ import { FlowFile }  from "./flows/FlowFile.js";
 import { LinkPreviewFlow }  from "./flows/LinkPreviewFlow.js";
 import { InfoPluginFlow }  from "./flows/InfoPluginFlow.js";
 import { ServiciosFlow }  from "./flows/ServiciosFlow.js";
+import { StickerFlow }  from "./flows/StickerFlow.js";
 
 
 const main = async () => {
@@ -26,7 +27,8 @@ const main = async () => {
     FlowFile,
     LinkPreviewFlow,
     InfoPluginFlow,
-    ServiciosFlow
+    ServiciosFlow,
+    StickerFlow
   ]);
   const adapterProvider = bot.createProvider(BaileysProvider);
 
