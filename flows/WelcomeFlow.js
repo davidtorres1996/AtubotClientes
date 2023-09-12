@@ -4,7 +4,7 @@ import { typing, delay, sendReaction } from '../utils/utils.js';
 import { MenuFlow }  from "./MenuFlow.js";
 
 export const WelcomeFlow = bot .addKeyword(bot.EVENTS.WELCOME)
-.addAction(async (ctx, {flowDynamic, state, gotoFlow}) =>{
+.addAction(async (ctx, {flowDynamic, state, gotoFlow, provider}) =>{
 
     const myState = state.getMyState()
     if (!myState) {
