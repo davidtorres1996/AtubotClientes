@@ -7,9 +7,8 @@ import { ServiciosFlow } from "./ServiciosFlow.js";
 const regexMenu = `/^menu$/i`;
 
 export const MenuFlow = bot .addKeyword(regexMenu, {regex: true})
-.addAction(async (ctx, {flowDynamic, state, provider}) =>{  
+.addAction(async (ctx, {flowDynamic, provider}) =>{  
 
-    state.update({ welcome: "enviado" })
     const Menu = /^menu$/i;
 
     if (Menu.test(ctx.body)) {

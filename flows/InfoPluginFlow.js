@@ -5,9 +5,8 @@ import { MenuFlow } from "./MenuFlow.js";
 
 
 export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
-.addAction(async (ctx, {flowDynamic, provider, state}) =>{  
+.addAction(async (ctx, {flowDynamic, provider}) =>{  
 
-    state.update({ welcome: "enviado" })
     await typing(provider, ctx, 2000);
         await flowDynamic([
             {

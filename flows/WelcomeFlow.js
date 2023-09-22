@@ -3,13 +3,12 @@ import bot from "@bot-whatsapp/bot";
 import { typing, delay, sendReaction } from '../utils/utils.js';
 import { MenuFlow }  from "./MenuFlow.js";
 
-export const WelcomeFlow = bot .addKeyword(bot.EVENTS.WELCOME)
-.addAction(async (ctx, {flowDynamic, state, gotoFlow, provider}) =>{
+export const WelcomeFlow = bot .addKeyword('APAGADO_EVENTO_MESSAGE_ALL')
+.addAction(async (ctx, {flowDynamic, gotoFlow, provider}) =>{
 
-    const myState = state.getMyState()
+
     if (!myState) {
 
-        state.update({ welcome: "enviado" })
 
         await sendReaction(provider, ctx, "🤖");
         await typing(provider, ctx, 2000);
