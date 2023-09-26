@@ -16,6 +16,6 @@ export const DemoFlow = bot .addKeyword(clave2, {regex: true})
     await typing(provider, ctx, 2000);
     await flowDynamic("Pero antes de que empieces a explorar, asegúrate de revisar nuestras instrucciones detalladas paso a paso 📜, donde encontrarás todo lo que necesitas para descargar e instalar la herramienta:")
     await typing(provider, ctx, 2000);
-    await abc.sendMessage(id, { text: 'https://www.atubot.net.pe/p/bienvenido.html  \nPor favor, tómate un momento para *revisar todas las instrucciones* de instalación antes de hacer cualquier pregunta.' });
+    await abc.sendMessage(id, { text: 'https://atubot.blogspot.com/p/demo.html  \nPor favor, tómate un momento para *revisar todas las instrucciones* de instalación antes de hacer cualquier pregunta.' });
   
     });
