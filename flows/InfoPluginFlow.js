@@ -51,7 +51,6 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await sendReaction(provider, ctx, "🤖");
             await typing(provider, ctx, 2000);
             await flowDynamic(`📲 Puedes instalar el plugin en más de un dispositivo, pero ten en cuenta que el soporte técnico y las actualizaciones estarán disponibles solo para un dispositivo. El código fuente te permite instalarlo en N dispositivos, pero el soporte es exclusivo para uno. 🛠️📱
-            
             Recuerda que queda estrictamente prohibida la reproducción total o parcial de este contenido sin autorización previa por escrito. Además, no me hago responsable si compras el producto con la intención de revenderlo. ¡Usa el plugin de manera responsable y disfruta de sus funciones! 😊🚫🔄`)
             fallBack()
           break;
@@ -61,7 +60,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`📚 El plugin tiene instrucciones detalladas en video 🎥, donde se explican paso a paso los procedimientos de instalación. Para seguir las guías, es necesario tener un conocimiento mínimo sobre tu dispositivo móvil 📱 para ubicar y configurar los permisos requeridos. Te invitamos a descubrir por ti mismo cómo instalarlo visitando la siguiente página:`)
             await typing(provider, ctx, 2000);
-            await abc.sendMessage(id, { text: 'https://www.atubot.net.pe/p/bienvenido.html \n*Recuerda que puedes Pedir la Demo en el menu principal 🚀🔧*' });
+            await abc.sendMessage(id, { text: 'https://atubot.blogspot.com/p/bienvenido.html \n*Recuerda que puedes Pedir la Demo en el menu principal 🚀🔧*' });
             fallBack()
           break;
       

@@ -42,19 +42,12 @@ export const MenuFlow = bot .addKeyword(regexMenu, {regex: true})
           await sendReaction(provider, ctx, "🤖");
           await typing(provider, ctx, 2000);
             flowDynamic([
-              `¡Genial *${ctx.pushName}*! Si ya probaste la demo y estás contento con las capacidades del Plugin, puedes proceder a realizar el pago. A continuación, te proporcionamos los métodos de pago disponibles:`,
-              "*Para usuarios fuera de Perú:*\n*_55 USD/USDT_*"
+              `¡Genial *${ctx.pushName}*! Si ya probaste la demo y estás contento con las capacidades del Plugin, puedes proceder a realizar el pago.`
             ]
             )
             await typing(provider, ctx, 2000);
-            await abc.sendMessage(id, { text: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7URTTUAX9K62G \n*Paga con PAYPAL*' });
-            await typing(provider, ctx, 2000);
-            await flowDynamic("*Criptomonedas en Binance:* Envía el pago a este correo electrónico:\n*electro.david96@gmail.com*")
-            await typing(provider, ctx, 2000);
-            await flowDynamic("*Para usuarios en Perú:*\n*_s/200_*\n\n*BCP:* 191 07324773 0 59\n*INTERBANK:* 402 3118005756\n*YAPE:* 924135651\n _Todos a nombre de David Torres, tu servidor_")
-            await typing(provider, ctx, 2000);
-            await flowDynamic("Una vez que hayas realizado el pago, asegúrate de enviarnos tu *comprobante de pago* y tu dirección de *correo electrónico.* Una vez verificado el pago, te enviaremos el archivo correspondiente.📤🚀")
-            fallBack()
+            await abc.sendMessage(id, { text: 'https://atubot.net.pe/producto/plugin-v2-pro/\n*Precio y metodos de Pago en el enlace 👆*' });
+            fallBack()          
 
           break;
       
