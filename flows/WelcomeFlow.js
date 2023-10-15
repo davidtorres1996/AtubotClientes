@@ -1,4 +1,4 @@
-import bot, { EVENTS } from "@bot-whatsapp/bot";
+import bot from "@bot-whatsapp/bot";
 import { agregarTelefono } from '../utils/telefonos.js';
 
 import { typing, delay, sendReaction } from '../utils/utils.js';
