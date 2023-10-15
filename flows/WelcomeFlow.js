@@ -1,14 +1,16 @@
-import bot from "@bot-whatsapp/bot";
+import bot, { EVENTS } from "@bot-whatsapp/bot";
+import { agregarTelefono } from '../utils/telefonos.js';
 
 import { typing, delay, sendReaction } from '../utils/utils.js';
 import { MenuFlow }  from "./MenuFlow.js";
 
-export const WelcomeFlow = bot .addKeyword('APAGADO_EVENTO_MESSAGE_ALL')
+export const WelcomeFlow = bot .addKeyword(EVENTS.WELCOME)
 .addAction(async (ctx, {flowDynamic, gotoFlow, provider}) =>{
 
+    const id = ctx.from
+    const agregado = await agregarTelefono(id);
 
-    if (!myState) {
-
+    if (agregado) {
 
         await sendReaction(provider, ctx, "🤖");
         await typing(provider, ctx, 2000);
@@ -20,9 +22,11 @@ export const WelcomeFlow = bot .addKeyword('APAGADO_EVENTO_MESSAGE_ALL')
             "_◼️Escribe el numero para indicarme tu elección_\n_◼️Escribe menu cuando quieras volver a ver estas opciones_"
         ]
         )
-        await gotoFlow(MenuFlow)
-
-      }
+        gotoFlow(MenuFlow, 1)
+    } else {
+        gotoFlow(MenuFlow)
+       
+    }
 
 }
 )

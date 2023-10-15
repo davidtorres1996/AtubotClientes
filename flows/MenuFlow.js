@@ -1,17 +1,19 @@
 import bot from "@bot-whatsapp/bot";
 
 import { typing, delay, sendReaction } from '../utils/utils.js';
+import { agregarTelefono } from '../utils/telefonos.js';
 import { InfoPluginFlow } from "./InfoPluginFlow.js";
 import { ServiciosFlow } from "./ServiciosFlow.js";
 
-const regexMenu = `/^menu$/i`;
+const regexMenu = `/^men[uú]$/i`;
 
 export const MenuFlow = bot .addKeyword(regexMenu, {regex: true})
 .addAction(async (ctx, {flowDynamic, provider}) =>{  
 
-    const Menu = /^menu$/i;
+    const Menu = /^men[uú]$/i;
 
     if (Menu.test(ctx.body)) {
+      agregarTelefono(id2);
       await sendReaction(provider, ctx, "🤖");
       await typing(provider, ctx, 2000);
         await flowDynamic([
