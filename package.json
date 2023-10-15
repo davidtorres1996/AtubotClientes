@@ -13,7 +13,7 @@
         "@bot-whatsapp/bot": "^0.1.33",
         "@bot-whatsapp/cli": "^0.1.33",
         "@bot-whatsapp/database": "^0.1.33",
-        "@bot-whatsapp/portal": "^0.1.33",
+        "@bot-whatsapp/portal": "file:packages/portalQR",
         "@bot-whatsapp/provider": "^0.1.33",
         "@whiskeysockets/baileys": "^6.4.0",
         "bot-ws-plugin-openai": "^1.0.5",
