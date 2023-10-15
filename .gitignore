@@ -4,3 +4,4 @@ bot_*
 *.log
 *.png
 db.json
+telefonos.json

@@ -11,6 +11,7 @@ export const MenuFlow = bot .addKeyword(regexMenu, {regex: true})
 .addAction(async (ctx, {flowDynamic, provider}) =>{  
 
     const Menu = /^men[uú]$/i;
+    const id2 = ctx.from
 
     if (Menu.test(ctx.body)) {
       agregarTelefono(id2);
