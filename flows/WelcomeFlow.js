@@ -4,7 +4,7 @@ import { agregarTelefono } from '../utils/telefonos.js';
 import { typing, delay, sendReaction } from '../utils/utils.js';
 import { MenuFlow }  from "./MenuFlow.js";
 
-export const WelcomeFlow = bot .addKeyword(EVENTS.WELCOME)
+export const WelcomeFlow = bot .addKeyword(bot.EVENTS.WELCOME)
 .addAction(async (ctx, {flowDynamic, gotoFlow, provider}) =>{
 
     const id = ctx.from
