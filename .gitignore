@@ -5,3 +5,4 @@ bot_*
 *.png
 db.json
 telefonos.json
+.env

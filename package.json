@@ -16,13 +16,10 @@
         "@bot-whatsapp/portal": "file:packages/portalQR",
         "@bot-whatsapp/provider": "^0.1.33",
         "@whiskeysockets/baileys": "^6.4.0",
-        "bot-ws-plugin-openai": "^1.0.5",
-        "date-fns": "^2.30.0",
         "dotenv": "^16.3.1",
         "google-auth-library": "^8.8.0",
         "google-spreadsheet": "^4.0.2",
         "link-preview-js": "^3.0.5",
-        "openai": "^3.3.0",
         "wa-sticker-formatter": "4.3.2"
     },
     "author": "",

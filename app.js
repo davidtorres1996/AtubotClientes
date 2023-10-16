@@ -1,6 +1,5 @@
 import "dotenv/config";
 import bot from "@bot-whatsapp/bot";
-import { getDay } from "date-fns";
 import QRPortalWeb from "@bot-whatsapp/portal";
 import BaileysProvider from "@bot-whatsapp/provider/baileys";
 import MockAdapter from "@bot-whatsapp/database/json";
