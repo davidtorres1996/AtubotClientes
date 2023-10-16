@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: atubot:1.0
+    image: atubot-bot:1.0
     restart: always
     ports:
       - 3000:3000
