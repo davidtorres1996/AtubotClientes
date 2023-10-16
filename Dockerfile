@@ -10,6 +10,7 @@ COPY . .
 FROM node:18-bullseye-slim
 WORKDIR /app
 COPY --from=builder /app ./
+ARG RAILWAY_STATIC_URL
 ARG PUBLIC_URL
 ARG PORT
 CMD ["npm", "start"]
