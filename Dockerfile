@@ -1,6 +1,7 @@
 FROM node:18-bullseye-slim as builder
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
+COPY packages ./packages 
 RUN npm install --global pnpm
 RUN pnpm install --only=production
 COPY . .
