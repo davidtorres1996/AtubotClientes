@@ -6,26 +6,29 @@ settings:
 
 dependencies:
   '@bot-whatsapp/bot':
-    specifier: ^0.1.33
-    version: 0.1.33
+    specifier: ^0.1.34
+    version: 0.1.34
   '@bot-whatsapp/cli':
-    specifier: ^0.1.33
-    version: 0.1.33
+    specifier: ^0.1.34
+    version: 0.1.34
   '@bot-whatsapp/database':
-    specifier: ^0.1.33
-    version: 0.1.33
+    specifier: ^0.1.34
+    version: 0.1.34
   '@bot-whatsapp/portal':
     specifier: file:packages/portalQR
     version: file:packages/portalQR
   '@bot-whatsapp/provider':
-    specifier: ^0.1.33
-    version: 0.1.33
+    specifier: ^0.1.34
+    version: 0.1.34
   '@whiskeysockets/baileys':
     specifier: ^6.4.0
     version: 6.5.0(link-preview-js@3.0.5)
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
+  eslint-plugin-bot-whatsapp:
+    specifier: ^0.1.34
+    version: 0.1.34
   google-auth-library:
     specifier: ^8.8.0
     version: 8.9.0
@@ -608,21 +611,21 @@ packages:
     dev: false
     optional: true
 
-  /@bot-whatsapp/bot@0.1.33:
-    resolution: {integrity: sha512-PHM4pe0wx8IUipL37O+rcx2a36HMBzgPQt7Sto3EH7Fndqj7bwsmmhKTzAtGDsja4NOlecjz2bh8fjC1aI9Faw==}
+  /@bot-whatsapp/bot@0.1.34:
+    resolution: {integrity: sha512-0MagDT+YimZM+upMAHi52iuJLFG3nx6Maj17yt3uTLyOKFR7TDDQboLdtGdzpu1szUkgxQXZnb2gyQk/6bIkbw==}
     dependencies:
       dotenv: 16.3.1
     dev: false
 
-  /@bot-whatsapp/cli@0.1.33:
-    resolution: {integrity: sha512-DkHZVlowAZAqXestrMcplCJzRYiHFu54TpCvR/nXlOzz/g4UfqT3lcZGb6mm28Jc8HxTTAVnwCnjKnNZSaht/Q==}
+  /@bot-whatsapp/cli@0.1.34:
+    resolution: {integrity: sha512-j6FDuA1i1WGGiBhN9/85zMTWCG9J/CW/5Hd4qpPjXd0vS7cHuaA88IBsTCCYloVG6e0+zX8uWZIHis5iM5DY3w==}
     hasBin: true
     dependencies:
       picocolors: 1.0.0
     dev: false
 
-  /@bot-whatsapp/database@0.1.33:
-    resolution: {integrity: sha512-rw5XdHumhh14UJlWh3PzTLgVyTFwZigl5etwpNXI3u7n8zyorHSg8NCJou3sOlTTJld4f+85OpfiZrOeiBMaYQ==}
+  /@bot-whatsapp/database@0.1.34:
+    resolution: {integrity: sha512-48h8r3Uk+HdkbrTwuFZ14goHDDV2Sb7TAoM2E/Ozlp8/sCpPOo/1bXt4BMg0Rkjhds6uxqqghXzBULzmzm5LtA==}
     dependencies:
       dotenv: 16.3.1
       mongodb: 4.17.1
@@ -633,10 +636,10 @@ packages:
       - pg-native
     dev: false
 
-  /@bot-whatsapp/provider@0.1.33:
-    resolution: {integrity: sha512-GHLNd9UWdipB6QeB2+hGP5wOzyI0NwPvzXi/gex7kkaHjARxGWYorAxit4Mj6dh12gvY9zTDIh91JWNgj6ABog==}
+  /@bot-whatsapp/provider@0.1.34:
+    resolution: {integrity: sha512-FxCmzsgyjCaosJR9jxe2fw/HI8O5g8pnIaSo3BMQJfiOACDF0vZDlVSNVvdfuKKLnVgzbKq5vXptxBE3yChQ5A==}
     dependencies:
-      '@bot-whatsapp/bot': 0.1.33
+      '@bot-whatsapp/bot': 0.1.34
       '@ffmpeg-installer/ffmpeg': 1.1.0
       axios: 1.5.1
       combine-image: 1.0.3
@@ -1779,6 +1782,10 @@ packages:
 
   /escape-html@1.0.3:
     resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
+    dev: false
+
+  /eslint-plugin-bot-whatsapp@0.1.34:
+    resolution: {integrity: sha512-/vfDJebGP9aM4Ea9Vprc2DWJ7JLrxLOYqzkvQXd7Dx+2+6zEBuq/Nc2ZHDDuWq+9ODetddCGhH5dEsfyzMZXog==}
     dev: false
 
   /etag@1.8.1:
