@@ -12,10 +12,8 @@ export const DemoFlow = bot .addKeyword(clave2, {regex: true})
 
     await sendReaction(provider, ctx, "🤖");
     await typing(provider, ctx, 2000);
-    flowDynamic(`*¡${ctx.pushName}!* 🌟\n¡Aquí está tu enlace demo del Plugin:\nhttps://taskernet.com/shares/?user=AS35m8kO2Sf3H%2FI3H3GKoKtye5Q%2B6fB3%2BLIGVsjFCPmpGvIq9P56Qntx2mIgD1PbSOfhqpIBgixxvA%3D%3D&id=Project%3APlugin+Demo+V2.6 🤖💼`)
+    await flowDynamic(`*¡${ctx.pushName}!* 🌟\nPuedes aprender a descargar e instalar la demo en el siguiente enlace:\n\nhttps://atubot.net.pe/tienda/demo-plugin-atubot-v3/`)
     await typing(provider, ctx, 2000);
-    await flowDynamic("Pero antes de que empieces a explorar, asegúrate de revisar nuestras instrucciones detalladas paso a paso 📜, donde encontrarás todo lo que necesitas para descargar e instalar la herramienta:")
-    await typing(provider, ctx, 2000);
-    await abc.sendMessage(id, { text: 'https://atubot.blogspot.com/p/demo.html  \nPor favor, tómate un momento para *revisar todas las instrucciones* de instalación antes de hacer cualquier pregunta.' });
+    await flowDynamic(`Encontraras el Paso a Paso para instalar y probar la DEMO`)
   
     });
