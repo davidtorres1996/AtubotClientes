@@ -12,8 +12,9 @@ export const DemoFlow = bot .addKeyword(clave2, {regex: true})
 
     await sendReaction(provider, ctx, "🤖");
     await typing(provider, ctx, 2000);
-    await flowDynamic(`*¡${ctx.pushName}!* 🌟\nPuedes aprender a descargar e instalar la demo en el siguiente enlace:\n\nhttps://atubot.net.pe/tienda/demo-plugin-atubot-v3/`)
+    await flowDynamic(`*¡${ctx.pushName}!* 🌟\nPuedes aprender a descargar e instalar la demo en el siguiente enlace:\n\nhttps://atubot.net.pe/tienda/demo-plugin-atubot-v3/`);
     await typing(provider, ctx, 2000);
-    await flowDynamic(`Encontraras el Paso a Paso para instalar y probar la DEMO`)
+    await flowDynamic(`Encontraras el Paso a Paso para instalar y probar la DEMO`);
+    await endFlow();
   
     });

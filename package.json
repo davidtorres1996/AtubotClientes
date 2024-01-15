@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
-        "start": "node --max-old-space-size=1024 app.js"
+        "start": "node app.js"
     },
     "keywords": [],
     "dependencies": {

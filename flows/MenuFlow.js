@@ -14,15 +14,15 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
     const id2 = ctx.from
 
     if (Menu.test(ctx.body)) {
-      agregarTelefono(id2);
+      //agregarTelefono(id2);
       await sendReaction(provider, ctx, "🤖");
-      await typing(provider, ctx, 2000);
+      await typing(provider, ctx);
       await flowDynamic([
         {
           body: `*${ctx.pushName}* 😊👋\nTengo estas opciones para ti:\n\n├1️⃣ _*Info Plugin V3*_\n├2️⃣ _*Comprar Plugin V3*_\n├3️⃣ _*Demo Plugin V3*_\n├4️⃣ _*Servicios*_\n├5️⃣ _*Tutoriales*_\n└6️⃣ _*Tienda de Proyectos*_`,
-          media: "https://drive.google.com/uc?id=1pAFpsqEq-HXLYux7B23RMUIdaUx7QDOC"
+          media: "https://atubot.net.pe/wp-content/uploads/2024/01/welcome-chatbot.jpg"
         },
-        "_◼️Escribe el numero para indicarme tu elección_\n_◼️Escribe menu cuando quieras volver a ver estas opciones_"
+        "_◼️Escribe menu cuando quieras volver a ver estas opciones_"
       ]
       )
     } else {
@@ -30,7 +30,7 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
     }
 
   })
-  .addAction({ capture: true }, async (ctx, { flowDynamic, fallBack, gotoFlow, provider }) => {
+  .addAction({ capture: true }, async (ctx, { flowDynamic, fallBack, gotoFlow, provider, endFlow }) => {
 
     const id = ctx.key.remoteJid;
     const abc = await provider.getInstance();
@@ -38,12 +38,13 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
     switch (ctx.body) {
       case '1':
         await sendReaction(provider, ctx, "🤖");
-        gotoFlow(InfoPluginFlow)
+        await gotoFlow(InfoPluginFlow)
+        await endFlow();
         break;
 
       case '2':
         await sendReaction(provider, ctx, "🤖");
-        await typing(provider, ctx, 2000);
+        await typing(provider, ctx, 1000);
         await flowDynamic([
           `¡Genial *${ctx.pushName}*! Si ya probaste la demo y estás contento con las capacidades del Plugin, puedes proceder a realizar el pago.`
         ]
@@ -70,50 +71,56 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
             },
           },
         });
-        fallBack()
+        await fallBack()
+        await endFlow();
 
         break;
 
       case '3':
         await sendReaction(provider, ctx, "🤖");
-        await typing(provider, ctx, 2000);
+        await typing(provider, ctx, 1000);
         await flowDynamic(`*¡${ctx.pushName}!* 🌟\nPuedes aprender a descargar e instalar la demo en el siguiente enlace:\n\nhttps://atubot.net.pe/tienda/demo-plugin-atubot-v3/`)
         await typing(provider, ctx, 2000);
         await flowDynamic(`Encontraras el Paso a Paso para instalar y probar la DEMO`)
-        fallBack()
+        await fallBack()
+        await endFlow();
         break;
 
       case '4':
         await sendReaction(provider, ctx, "🤖");
-        gotoFlow(ServiciosFlow)
+        await gotoFlow(ServiciosFlow);
+        await endFlow();
         break;
 
       case '5':
         await sendReaction(provider, ctx, "🤖");
-        await typing(provider, ctx, 2000);
+        await typing(provider, ctx);
         await flowDynamic([
           {
             body: `*${ctx.pushName}* 😊👋\nEste apartado está actualmente en proceso de construcción. Estamos trabajando arduamente para brindarte la mejor experiencia posible. Gracias por tu paciencia y por visitarnos. Te sugerimos intentarlo de nuevo en otro momento. ¡Estamos en plena acción! 🏗️👷‍♂️🛠️`,
-            media: "https://drive.google.com/uc?id=1pBFiwBztFid-7wp-WMkHY9E_aMiJr_5F"
+            media: "https://atubot.net.pe/wp-content/uploads/2024/01/tutoriales.jpg"
           }
         ])
-        fallBack()
+        await fallBack()
+        await endFlow();
         break;
 
       case '6':
         await sendReaction(provider, ctx, "🤖");
-        await typing(provider, ctx, 2000);
+        await typing(provider, ctx);
         await flowDynamic([
           {
             body: `*${ctx.pushName}* 😊👋\nEste apartado está actualmente en proceso de construcción. Estamos trabajando arduamente para brindarte la mejor experiencia posible. Gracias por tu paciencia y por visitarnos. Te sugerimos intentarlo de nuevo en otro momento. ¡Estamos en plena acción! 🏗️👷‍♂️🛠️`,
-            media: "https://drive.google.com/uc?id=1O9LDj0OoXG-UyEvaGpyCeLqugoeQYXvo"
+            media: "https://atubot.net.pe/wp-content/uploads/2024/01/tienda.jpg"
           }
         ])
-        fallBack()
+        await fallBack();
+        await endFlow();
         break;
 
       default:
-        fallBack()
+        await fallBack();
+        await endFlow();
         break;
     }
 
