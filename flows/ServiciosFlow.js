@@ -38,7 +38,7 @@ export const ServiciosFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`Nos encantaría recibir un documento detallado que describa el *flujo de conversación* y las funciones que necesitas. Puedes enviarnos tu información en formato *Word, Excel, PowerPoint* o cualquier otro formato que prefieras. Una vez que revisemos tu documento, te proporcionaremos una estimación de costos y estaremos listos para discutir todos los detalles. ¡Estamos emocionados por la posibilidad de trabajar contigo en tu proyecto! 🤝💼🚀`)
             await fallBack();
-            await endFlow();
+
           break;
       
         case '2':
@@ -55,7 +55,7 @@ export const ServiciosFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`Nos encantaría recibir un documento detallado que describa el *flujo de conversación* y las funciones que necesitas. Puedes enviarnos tu información en formato *Word, Excel, PowerPoint* o cualquier otro formato que prefieras. Una vez que revisemos tu documento, te proporcionaremos una estimación de costos y estaremos listos para discutir todos los detalles. ¡Estamos emocionados por la posibilidad de trabajar contigo en tu proyecto! 🤝💼🚀`)
             await fallBack();
-            await endFlow();
+
           break;
 
         case '0':
@@ -73,7 +73,7 @@ export const ServiciosFlow = bot .addKeyword(bot.EVENTS.ACTION)
       
         default:
             await fallBack();
-            await endFlow();
+
           break;
       }
       

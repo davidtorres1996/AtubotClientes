@@ -29,7 +29,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 1000);
             await flowDynamic(`🎉 ¡Gran noticia! El Plugin V3 está disponible por solo *$55 USD* en este momento. Pero, ¡date prisa! El precio aumentará a medida que sigamos mejorándolo. 🚀 *¡Aprovecha esta oferta especial ahora!* 😃💰`)
             await fallBack()
-            await endFlow();
+
           break;
       
         case '2':
@@ -37,7 +37,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 1000);
             await flowDynamic(`💼 El pago es único, lo que significa que solo tendrás que realizar un pago.\n🎁 Te entregaremos el archivo fuente junto con las instrucciones de instalación y mantenimiento.\n💻 *¡Sin pagos recurrentes!* Es una oferta que no puedes dejar pasar. 😊👍`)
             await fallBack()
-            await endFlow();
+
           break;
       
         case '3':
@@ -48,7 +48,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await flowDynamic(`*Funciones soportadas:*\n\n✅ Enviar Texto\n✅ Enviar Imagen\n✅ Enviar Video\n✅ Enviar PDF\n✅ Enviar Nota de Voz\n✅ Reenviar Mensaje a Grupo o Asesor\n✅ Enviar Medios Concatenados\n✅ Agendar Contacto Automáticamente\n✅ Enviar Enlace con Vista Previa\n✅ Enviar y Responder a Encuestas de WhatsApp
             `)
             await fallBack()
-            await endFlow();
+
           break;
       
         case '4':
@@ -56,7 +56,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 1000);
             await flowDynamic(`📲 Puedes instalar el plugin en más de un dispositivo, pero ten en cuenta que el soporte técnico y las actualizaciones estarán disponibles solo para un dispositivo. El código fuente te permite instalarlo en N dispositivos, pero el soporte es exclusivo para uno. 🛠️📱\n\nRecuerda que queda estrictamente *prohibida la reproducción total o parcial de este contenido sin autorización previa por escrito.* Además, no me hago responsable si compras el producto con la intención de revenderlo. ¡Usa el plugin de manera responsable y disfruta de sus funciones! 😊🚫🔄`)
             await fallBack()
-            await endFlow();
+
           break;
       
         case '5':
@@ -64,7 +64,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 1000);
             await flowDynamic(`📚 El plugin tiene instrucciones detalladas en video 🎥, donde se explican paso a paso los procedimientos de instalación. Para seguir las guías, es necesario tener un conocimiento mínimo sobre tu dispositivo móvil 📱 para ubicar y configurar los permisos requeridos. Te invitamos a *Probar la demo* en el *menu* principal`)
             await fallBack();
-            await endFlow();
+
           break;
       
         case '6':
@@ -78,7 +78,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`Esta solución creativa es perfecta para aquellos a quienes les gusta *cacharrear* y hacer las cosas por sí mismos, ya que les brinda la capacidad de *automatizar* diferentes aspectos de su experiencia en WhatsApp. Abre un nuevo mundo de posibilidades para la comunicación entre Tasker y Autoresponder🔥🤖`)
             await fallBack();
-            await endFlow();
+
           break;
 
         case '7':
@@ -88,7 +88,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`¡Mantente en el camino correcto y disfruta de todas las ventajas de estar al día con las últimas novedades y mejoras del Plugin V3! 🚀📱😃`)
             await fallBack()
-            await endFlow();
+
           break;
 
         case '8':
@@ -98,7 +98,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`*Un consejo antes de comprar:* te recomendamos probar primero la versión *demo* en el menú principal. Esto te permitirá asegurarte de que el Plugin V3 es completamente compatible con tu dispositivo, lo que garantiza *una compra consciente* y sin sorpresas. ¡No querrás perderte esta oportunidad de automatización! 😉🚀`)
             await fallBack();
-            await endFlow();
+
           break;
 
         case '9':
@@ -108,7 +108,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
             await typing(provider, ctx, 2000);
             await flowDynamic(`Si tu negocio tiene un *alto tráfico* de más de 300 mensajes al día o buscas una herramienta extremadamente fácil de usar y mantener, entonces esta herramienta podría no ser la más adecuada para ti.\nEn ese caso, te sugerimos explorar plataformas como ManyChat o Twilio. Si no estás seguro, ¡puedes probar la demo en el menú principal para asegurarte si se adapta a tus necesidades! 📱💼🚀😊"`)
             await fallBack()
-            await endFlow();
+
           break;
 
         case '0':
@@ -126,7 +126,7 @@ export const InfoPluginFlow = bot .addKeyword(bot.EVENTS.ACTION)
       
         default:
             await fallBack();
-            await endFlow();
+
           break;
       }
       

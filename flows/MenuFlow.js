@@ -40,6 +40,7 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
         await sendReaction(provider, ctx, "🤖");
         await gotoFlow(InfoPluginFlow)
         await endFlow();
+
         break;
 
       case '2':
@@ -72,7 +73,7 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
           },
         });
         await fallBack()
-        await endFlow();
+
 
         break;
 
@@ -83,13 +84,14 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
         await typing(provider, ctx, 2000);
         await flowDynamic(`Encontraras el Paso a Paso para instalar y probar la DEMO`)
         await fallBack()
-        await endFlow();
+
         break;
 
       case '4':
         await sendReaction(provider, ctx, "🤖");
         await gotoFlow(ServiciosFlow);
         await endFlow();
+
         break;
 
       case '5':
@@ -102,7 +104,7 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
           }
         ])
         await fallBack()
-        await endFlow();
+
         break;
 
       case '6':
@@ -115,12 +117,12 @@ export const MenuFlow = bot.addKeyword(regexMenu, { regex: true })
           }
         ])
         await fallBack();
-        await endFlow();
+
         break;
 
       default:
         await fallBack();
-        await endFlow();
+
         break;
     }
 
